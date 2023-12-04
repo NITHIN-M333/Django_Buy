@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    
+    h4{color:aquamarine;}
+    body{background: black;}
+    p{color: rgb(89, 191, 157);}
+</style>
+    <title>MOVIE LIST</title>
+</head>
+<body>
+    <h1 style="color: gold;" ><b>Movie List</b></h1>
+    <br>
+    <br>
+    <br>
+    {%for list in data%}
+    <h4>Movie Name:{{list.name | upper}}</h4>
+    <h4>Release Date:{{list.year}}</h4>
+    <p>Summary:{{list.summary | default:'No data available'}}</p>
+    {% if list.success %}
+    <p>movie is success at the time</p>
+    {% else %}
+    <p>Movie is failure</p>
+    {% endif %}
+    {% endfor %}
+
+    
+</body>
+</html>
